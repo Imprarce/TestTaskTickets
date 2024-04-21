@@ -6,6 +6,17 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="MyChipTextStyle"><![CDATA[<item name="android:textStyle">italic</item>]]></style>
+    <style name="TextViewStyle">
+        <item name="android:textColor">@color/text_color_grey</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/text_color_search_grey</item>
+        <item name="android:textSize">18sp</item>
+        <item name="singleLine">true</item>
+        <item name="android:digits">АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя</item>
+    </style>
 
 </resources>

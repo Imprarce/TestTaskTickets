@@ -114,16 +114,20 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
     }
 
     override fun onCountryClick(country: CountryItem) {
-        val cityName = country.name
+        val cityNameFirst = binding.firstCountry.text.toString()
+        val cityNameSecond = country.name
         val bundle = Bundle().apply {
-            putString("cityName", cityName)
+            putString("cityNameFirst", cityNameFirst)
+            putString("cityNameSecond", cityNameSecond)
         }
         findNavController().navigate(R.id.action_searchFragment2_to_searchTheCountryFragment2, bundle)
     }
 
     private fun navigateToSearchTheCountryFragment(somewhere: String){
+        val cityNameFirst = binding.firstCountry.text.toString()
         val bundle = Bundle().apply {
-            putString("cityName", somewhere)
+            putString("cityNameFirst", cityNameFirst)
+            putString("cityNameSecond", somewhere)
         }
         findNavController().navigate(R.id.action_searchFragment2_to_searchTheCountryFragment2, bundle)
     }

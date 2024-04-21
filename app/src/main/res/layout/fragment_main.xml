@@ -23,14 +23,13 @@
             app:layout_editor_absoluteY="@dimen/value_16_dp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/value_32_dp"
             android:gravity="center"
             android:text="@string/mainText"
-            android:textColor="@color/text_color_grey"
-            android:textSize="20sp"
+            style="@style/TextViewStyle"
             app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
             app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
             app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +42,7 @@
         android:background="@drawable/custom_rectangle_constraint_search"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
         app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/title">
 
         <LinearLayout
             android:id="@+id/linear_search"
@@ -76,14 +75,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:singleLine="true"
                     android:hint="@string/hint_search_from_moscow"
-                    android:textColorHint="@color/text_color_search_grey"
                     android:paddingBottom="@dimen/value_8_dp"
                     android:text="@string/plug_text_search"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:digits="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"/>
+                    style="@style/EditTextStyle"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -95,13 +90,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:singleLine="true"
                     android:hint="@string/hint_search"
                     android:paddingTop="@dimen/value_8_dp"
-                    android:textColorHint="@color/text_color_search_grey"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"
-                    android:digits="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"/>
+                    style="@style/EditTextStyle"/>
 
             </LinearLayout>
 

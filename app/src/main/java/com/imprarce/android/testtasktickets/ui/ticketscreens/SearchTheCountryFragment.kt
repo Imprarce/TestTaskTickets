@@ -45,9 +45,11 @@ class SearchTheCountryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        cityName = arguments?.getString("cityName")
+        val cityNameFirst = arguments?.getString("cityNameFirst")
+        val cityNameSecond = arguments?.getString("cityNameSecond")
 
-        binding.secondCountry.setText(cityName ?: "")
+        binding.firstCountry.setText(cityNameFirst)
+        binding.secondCountry.setText(cityNameSecond)
 
         binding.chipSettings.setOnClickListener {
             findNavController().navigate(R.id.action_searchTheCountryFragment2_to_filtersFragment2)
