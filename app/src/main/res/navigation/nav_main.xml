@@ -42,6 +42,9 @@
         <action
             android:id="@+id/action_searchFragment_to_searchTheCountryFragment"
             app:destination="@id/searchTheCountryFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_fragmentPlug"
+            app:destination="@id/fragmentPlug" />
     </dialog>
     <fragment
         android:id="@+id/searchTheCountryFragment"
@@ -74,4 +77,9 @@
         android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.FiltersTicketFragment"
         android:label="fragment_filters_ticket"
         tools:layout="@layout/fragment_filters_ticket" />
+    <fragment
+        android:id="@+id/fragmentPlug"
+        android:name="com.imprarce.android.testtasktickets.ui.plugscreens.FragmentPlug"
+        android:label="fragment_plug"
+        tools:layout="@layout/fragment_plug" />
 </navigation>

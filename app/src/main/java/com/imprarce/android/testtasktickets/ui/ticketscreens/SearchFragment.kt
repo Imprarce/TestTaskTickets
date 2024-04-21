@@ -12,7 +12,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.imprarce.android.testtasktickets.R
 import com.imprarce.android.testtasktickets.databinding.FragmentSearchBinding
 import com.imprarce.android.testtasktickets.model.CountryItem
-import com.imprarce.android.testtasktickets.ui.ticketscreens.adapter.CountryAdapter
+import com.imprarce.android.testtasktickets.ui.adapter.CountryAdapter
+import com.imprarce.android.testtasktickets.ui.ticketscreens.helper.OnCountryClickListener
 
 class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
 
@@ -40,7 +41,26 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
         )
 
         setAdapter(countries)
+        setBottomSheet()
 
+        binding.square1.setOnClickListener {
+            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+        }
+
+        binding.square2.setOnClickListener {
+            navigateToSearchTheCountryFragment("Куда угодно")
+        }
+
+        binding.square3.setOnClickListener {
+            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+        }
+
+        binding.square4.setOnClickListener {
+            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+        }
+    }
+
+    private fun setBottomSheet(){
         val bottomSheet : FrameLayout = dialog?.findViewById(com.google.android.material.R.id.design_bottom_sheet)!!
 
         bottomSheet.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
@@ -69,6 +89,13 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
         val cityName = country.name
         val bundle = Bundle().apply {
             putString("cityName", cityName)
+        }
+        findNavController().navigate(R.id.action_searchFragment_to_searchTheCountryFragment, bundle)
+    }
+
+    private fun navigateToSearchTheCountryFragment(somewhere: String){
+        val bundle = Bundle().apply {
+            putString("cityName", somewhere)
         }
         findNavController().navigate(R.id.action_searchFragment_to_searchTheCountryFragment, bundle)
     }

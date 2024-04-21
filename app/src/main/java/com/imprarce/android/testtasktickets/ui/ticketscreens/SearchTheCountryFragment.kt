@@ -5,17 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.imprarce.android.testtasktickets.R
 import com.imprarce.android.testtasktickets.databinding.FragmentSearchTheCountryBinding
+import com.imprarce.android.testtasktickets.ui.MainViewModel
+import com.imprarce.android.testtasktickets.ui.adapter.TicketsOfferAdapter
+import com.imprarce.android.testtasktickets.utils.DateFormatter
+import com.imprarce.android.testtasktickets.utils.DatePickerManager
+import com.imprarce.android.ticket_api.entity.TicketsOffer
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class SearchTheCountryFragment : Fragment() {
+    private val viewModel: MainViewModel by viewModels()
 
     private var _binding: FragmentSearchTheCountryBinding? = null
     private val binding get() = _binding!!
 
     private var cityName: String? = R.string.plug_text.toString()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.fetchTicketsOffers()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,15 +45,70 @@ class SearchTheCountryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(savedInstanceState != null) cityName = arguments?.getString("cityName")
+        cityName = arguments?.getString("cityName")
+
+        binding.secondCountry.setText(cityName ?: "")
 
         binding.chipSettings.setOnClickListener {
             findNavController().navigate(R.id.action_searchTheCountryFragment_to_filtersFragment)
         }
 
-        binding.seeAllTicketsButton.setOnClickListener {
-            findNavController().navigate(R.id.action_searchTheCountryFragment_to_allTicketFragment)
+        binding.imageSwap.setOnClickListener {
+            val firstCountryText = binding.firstCountry.text
+            binding.firstCountry.text = binding.secondCountry.text
+            binding.secondCountry.text = firstCountryText
         }
+
+        binding.imageDelete.setOnClickListener {
+            binding.secondCountry.setText("")
+        }
+
+        binding.chipDate.text = DateFormatter.formatCurrentDate()
+
+        val datePickerManager = DatePickerManager(requireContext())
+
+        binding.chipDate.setOnClickListener {
+            datePickerManager.showDatePickerDialog { selectedDate ->
+                binding.chipDate.text = DateFormatter.formatDate(selectedDate)
+            }
+        }
+
+        binding.chipBack.setOnClickListener {
+            datePickerManager.showDatePickerDialog {}
+        }
+
+        viewModel.ticketsOffersLiveData.observe(viewLifecycleOwner) { ticketsOffer ->
+            if (ticketsOffer != null) {
+                setAdapter(ticketsOffer)
+                binding.showMoreTextView.visibility = View.GONE
+            }
+        }
+
+        binding.seeAllTicketsButton.setOnClickListener {
+            navigateToAllTicketsFragment()
+        }
+    }
+
+    private fun navigateToAllTicketsFragment() {
+        val cities =
+            binding.firstCountry.text.toString() + "-" + binding.secondCountry.text.toString()
+        val date = DateFormatter.formatDateForBundle(binding.chipDate.text.toString())
+        val passengers = binding.chipPersons.text.toString().toIntOrNull() ?: 1
+        val bundle = Bundle().apply {
+            putString("cities", cities)
+            putString("date", date)
+            putInt("passengers", passengers)
+        }
+        findNavController().navigate(
+            R.id.action_searchTheCountryFragment_to_allTicketFragment,
+            bundle
+        )
+    }
+
+    private fun setAdapter(ticketsOfferList: List<TicketsOffer>) {
+        val adapter = TicketsOfferAdapter(ticketsOfferList)
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun onDestroyView() {

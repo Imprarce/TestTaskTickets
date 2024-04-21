@@ -7,12 +7,9 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
 
-object NetworkService {
-    private val gson = GsonBuilder()
-        .setLenient()
-        .create()
+open class NetworkService {
+    private val gson = GsonBuilder().setLenient().create()
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
@@ -20,24 +17,12 @@ object NetworkService {
         })
         .build()
 
-    val ticketsService: TicketsService = Retrofit.Builder()
-        .baseUrl("file:///android_asset/")
-        .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .build()
-        .create(TicketsService::class.java)
+    fun createService(baseUrl: String): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
+    }
 
-    val offersService: OffersService = Retrofit.Builder()
-        .baseUrl("file:///android_asset/")
-        .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .build()
-        .create(OffersService::class.java)
-
-    val offersTicketsService: OffersTicketsService = Retrofit.Builder()
-        .baseUrl("file:///android_asset/")
-        .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .build()
-        .create(OffersTicketsService::class.java)
 }

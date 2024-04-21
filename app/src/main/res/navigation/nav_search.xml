@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_search"
+    app:startDestination="@id/searchFragment2">
+
+    <dialog
+        android:id="@+id/searchFragment2"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment2_to_fragmentPlug2"
+            app:destination="@id/fragmentPlug2" />
+        <action
+            android:id="@+id/action_searchFragment2_to_searchTheCountryFragment2"
+            app:destination="@id/searchTheCountryFragment2" />
+    </dialog>
+    <fragment
+        android:id="@+id/fragmentPlug2"
+        android:name="com.imprarce.android.testtasktickets.ui.plugscreens.FragmentPlug"
+        android:label="fragment_plug"
+        tools:layout="@layout/fragment_plug" />
+    <fragment
+        android:id="@+id/searchTheCountryFragment2"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.SearchTheCountryFragment"
+        android:label="fragment_search_the_country"
+        tools:layout="@layout/fragment_search_the_country">
+        <action
+            android:id="@+id/action_searchTheCountryFragment2_to_filtersFragment2"
+            app:destination="@id/filtersFragment2" />
+        <action
+            android:id="@+id/action_searchTheCountryFragment2_to_allTicketFragment2"
+            app:destination="@id/allTicketFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTicketFragment2"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.AllTicketFragment"
+        android:label="fragment_all_ticket"
+        tools:layout="@layout/fragment_all_ticket">
+        <action
+            android:id="@+id/action_allTicketFragment2_to_filtersTicketFragment2"
+            app:destination="@id/filtersTicketFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment2"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.FiltersFragment"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" />
+    <fragment
+        android:id="@+id/filtersTicketFragment2"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.FiltersTicketFragment"
+        android:label="fragment_filters_ticket"
+        tools:layout="@layout/fragment_filters_ticket" />
+</navigation>

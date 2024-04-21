@@ -1,4 +1,4 @@
-package com.imprarce.android.testtasktickets.ui.ticketscreens.adapter
+package com.imprarce.android.testtasktickets.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.imprarce.android.testtasktickets.R
 import com.imprarce.android.testtasktickets.model.CountryItem
-import com.imprarce.android.testtasktickets.ui.ticketscreens.OnCountryClickListener
+import com.imprarce.android.testtasktickets.ui.ticketscreens.helper.OnCountryClickListener
 
 class CountryAdapter(
     private val countries: List<CountryItem>,

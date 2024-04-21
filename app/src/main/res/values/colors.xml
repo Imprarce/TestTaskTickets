@@ -22,6 +22,7 @@
     <color name="text_color_blue">#2261BC</color>
     <color name="text_color_search_grey">#9F9F9F</color>
     <color name="icon_color">#DBDBDB</color>
+    <color name="green_button">#3A633B</color>
 
 
 </resources>

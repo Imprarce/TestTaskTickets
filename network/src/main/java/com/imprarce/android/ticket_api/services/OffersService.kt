@@ -7,4 +7,5 @@ import retrofit2.http.GET
 interface OffersService {
     @GET("offers.json")
     suspend fun getOffers(): Offers
+
 }

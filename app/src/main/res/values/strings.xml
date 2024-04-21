@@ -10,7 +10,7 @@
     <string name="mainText">Поиск дешевых авиабилетов</string>
     <string name="plug_text">Заглушка</string>
     <string name="hint_search">Куда - Турция</string>
-    <string name="plug_text_search">Минск</string>
+    <string name="plug_text_search">Москва</string>
     <string name="second_text_title_main">Музыкально отлететь</string>
     <string name="button_text">Показать все места</string>
     <string name="a_difficult_route">Сложный Маршрут</string>
@@ -27,7 +27,7 @@
     <string name="subcribe_price">Подписка на цену</string>
     <string name="back">Обратно</string>
     <string name="date">Дата</string>
-    <string name="persons">Количество людей</string>
+    <string name="persons">1,эконом</string>
     <string name="filters">Фильтры</string>
     <string name="transfers">Пересадки</string>
     <string name="no_transfer">Без пересадок</string>
@@ -39,4 +39,14 @@
     <string name="straight_lines_only">Только прямые</string>
     <string name="number_of_transfers">Количество пересадок</string>
     <string name="to_2">До 2</string>
+    <string name="time_transfers">Длительность пересадок</string>
+    <string name="no_transfers">Без пересадок в странах, закрытых для туристов</string>
+    <string name="no_separate_bookings">Без раздельных бронирований</string>
+    <string name="no_overnight_transfer">Без ночной пересадки</string>
+    <string name="without_changing_the_airport">Без смены аэропорта</string>
+    <string name="show_tickets">Показать билеты от</string>
+    <string name="text_example">Die Antwoord</string>
+    <string name="price">от 20000 ₽</string>
+    <string name="hint_search_from">Откуда - Турция</string>
+    <string name="passenger">пассажир</string>
 </resources>

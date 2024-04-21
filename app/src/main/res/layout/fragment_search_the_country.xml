@@ -47,34 +47,64 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:drawableEnd="@drawable/icon_swap"
-                android:drawablePadding="@dimen/value_8_dp"
-                android:hint="@string/hint_search"
-                android:paddingBottom="@dimen/value_8_dp"
-                android:text="@string/plug_text_search"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/first_country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/hint_search_from"
+                    android:textColorHint="@color/text_color_search_grey"
+                    android:paddingBottom="@dimen/value_8_dp"
+                    android:text="@string/plug_text_search"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image_swap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_swap"
+                    android:layout_gravity="top|center"
+                    android:paddingEnd="@dimen/value_8_dp"/>
+
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/grey_5" />
 
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:drawableEnd="@drawable/icon_delete"
-                android:drawablePadding="@dimen/value_8_dp"
-                android:hint="@string/hint_search"
-                android:paddingTop="@dimen/value_8_dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/text_color_search_grey"
-                android:textSize="18sp" />
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/second_country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/hint_search"
+                    android:paddingTop="@dimen/value_8_dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/text_color_search_grey"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/image_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:paddingEnd="@dimen/value_8_dp"
+                    android:src="@drawable/icon_delete" />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -171,13 +201,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/value_16_dp"
             app:layout_constraintBottom_toTopOf="@+id/showMore_textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rails_textView" />
+            app:layout_constraintTop_toBottomOf="@+id/rails_textView"
+            tools:listitem="@layout/item_recycler_view_tickets_offer"/>
 
         <TextView
             android:id="@+id/showMore_textView"
