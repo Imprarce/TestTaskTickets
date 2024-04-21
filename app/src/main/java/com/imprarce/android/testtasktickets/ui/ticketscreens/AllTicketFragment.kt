@@ -55,7 +55,7 @@ class AllTicketFragment : Fragment() {
         binding.dateAndPassengers.text = date + ", " + passengers + " " + getString(R.string.passenger)
 
         binding.filter.setOnClickListener {
-            findNavController().navigate(R.id.action_allTicketFragment_to_filtersTicketFragment)
+            findNavController().navigate(R.id.action_allTicketFragment2_to_filtersTicketFragment2)
         }
 
         binding.back.setOnClickListener {

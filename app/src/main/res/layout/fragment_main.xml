@@ -71,32 +71,37 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
-                <TextView
+                <EditText
                     android:id="@+id/first_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:hint="@string/hint_search"
+                    android:singleLine="true"
+                    android:hint="@string/hint_search_from_moscow"
+                    android:textColorHint="@color/text_color_search_grey"
                     android:paddingBottom="@dimen/value_8_dp"
                     android:text="@string/plug_text_search"
                     android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:digits="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"/>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/grey_5" />
 
-                <TextView
+                <EditText
                     android:id="@+id/second_editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
+                    android:singleLine="true"
                     android:hint="@string/hint_search"
                     android:paddingTop="@dimen/value_8_dp"
                     android:textColorHint="@color/text_color_search_grey"
                     android:textSize="18sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:digits="АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"/>
 
             </LinearLayout>
 

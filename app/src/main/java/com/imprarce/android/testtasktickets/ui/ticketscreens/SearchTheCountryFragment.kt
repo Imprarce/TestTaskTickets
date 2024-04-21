@@ -50,7 +50,11 @@ class SearchTheCountryFragment : Fragment() {
         binding.secondCountry.setText(cityName ?: "")
 
         binding.chipSettings.setOnClickListener {
-            findNavController().navigate(R.id.action_searchTheCountryFragment_to_filtersFragment)
+            findNavController().navigate(R.id.action_searchTheCountryFragment2_to_filtersFragment2)
+        }
+
+        binding.arrowBack.setOnClickListener {
+            findNavController().popBackStack()
         }
 
         binding.imageSwap.setOnClickListener {
@@ -100,7 +104,7 @@ class SearchTheCountryFragment : Fragment() {
             putInt("passengers", passengers)
         }
         findNavController().navigate(
-            R.id.action_searchTheCountryFragment_to_allTicketFragment,
+            R.id.action_searchTheCountryFragment2_to_allTicketFragment2,
             bundle
         )
     }

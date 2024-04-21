@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment -> bottomNavigationView.visibility = View.VISIBLE
                 R.id.shortsFragment -> bottomNavigationView.visibility = View.VISIBLE
                 R.id.subscriptionFragment -> bottomNavigationView.visibility = View.VISIBLE
-                R.id.allTicketFragment -> bottomNavigationView.visibility = View.VISIBLE
+                R.id.allTicketFragment2 -> bottomNavigationView.visibility = View.VISIBLE
+                R.id.searchTheCountryFragment2 -> bottomNavigationView.visibility = View.VISIBLE
                 else -> bottomNavigationView.visibility = View.GONE
             }
         }

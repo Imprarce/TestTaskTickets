@@ -1,6 +1,8 @@
 package com.imprarce.android.testtasktickets.ui.ticketscreens
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,11 +42,37 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
             CountryItem(R.drawable.image_country_3, getString(R.string.Phuket), getString(R.string.a_popular_destination))
         )
 
+        val cityNameFirst = arguments?.getString("cityNameFirst")
+        val cityNameSecond = arguments?.getString("cityNameSecond")
+
+        binding.firstCountry.setText(cityNameFirst)
+        binding.secondCountry.setText(cityNameSecond)
+
+        if(cityNameSecond != ""){
+            binding.clearButton.visibility = View.VISIBLE
+        }
+
+        binding.secondCountry.addTextChangedListener(object : TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                binding.clearButton.visibility = if (s.isNullOrEmpty()) View.GONE else View.VISIBLE
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+        })
+
+        binding.clearButton.setOnClickListener {
+            binding.secondCountry.text.clear()
+        }
+
         setAdapter(countries)
         setBottomSheet()
 
         binding.square1.setOnClickListener {
-            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+            findNavController().navigate(R.id.action_searchFragment2_to_fragmentPlug2)
         }
 
         binding.square2.setOnClickListener {
@@ -52,11 +80,11 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
         }
 
         binding.square3.setOnClickListener {
-            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+            findNavController().navigate(R.id.action_searchFragment2_to_fragmentPlug2)
         }
 
         binding.square4.setOnClickListener {
-            findNavController().navigate(R.id.action_searchFragment_to_fragmentPlug)
+            findNavController().navigate(R.id.action_searchFragment2_to_fragmentPlug2)
         }
     }
 
@@ -90,14 +118,14 @@ class SearchFragment : BottomSheetDialogFragment(), OnCountryClickListener {
         val bundle = Bundle().apply {
             putString("cityName", cityName)
         }
-        findNavController().navigate(R.id.action_searchFragment_to_searchTheCountryFragment, bundle)
+        findNavController().navigate(R.id.action_searchFragment2_to_searchTheCountryFragment2, bundle)
     }
 
     private fun navigateToSearchTheCountryFragment(somewhere: String){
         val bundle = Bundle().apply {
             putString("cityName", somewhere)
         }
-        findNavController().navigate(R.id.action_searchFragment_to_searchTheCountryFragment, bundle)
+        findNavController().navigate(R.id.action_searchFragment2_to_searchTheCountryFragment2, bundle)
     }
 
     override fun onDestroyView() {

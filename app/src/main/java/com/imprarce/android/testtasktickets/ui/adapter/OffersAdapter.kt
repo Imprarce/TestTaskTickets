@@ -32,7 +32,8 @@ class OffersAdapter(private val offersList: List<Offer>) :
         holder.image.setImageResource(imageResourceId)
         holder.name.text = currentItem.title
         holder.nameCity.text = currentItem.town
-        holder.price.text = "от "+ currentItem.price.value.toString() + " ₽"
+        val priceString = currentItem.price.value.toString().replace(Regex("(\\d)(?=(\\d{3})+\$)"), "$1 ")
+        holder.price.text = "от $priceString ₽"
     }
 
     override fun getItemCount(): Int {
