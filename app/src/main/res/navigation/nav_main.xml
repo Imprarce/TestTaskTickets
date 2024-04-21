@@ -9,7 +9,11 @@
         android:id="@+id/mainFragment"
         android:name="com.imprarce.android.testtasktickets.ui.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
     <fragment
         android:id="@+id/hotelsFragment"
         android:name="com.imprarce.android.testtasktickets.ui.plugscreens.HotelsFragment"
@@ -30,4 +34,44 @@
         android:name="com.imprarce.android.testtasktickets.ui.plugscreens.SubscriptionFragment"
         android:label="fragment_subscription"
         tools:layout="@layout/fragment_subscription" />
+    <dialog
+        android:id="@+id/searchFragment"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_searchTheCountryFragment"
+            app:destination="@id/searchTheCountryFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/searchTheCountryFragment"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.SearchTheCountryFragment"
+        android:label="fragment_search_the_country"
+        tools:layout="@layout/fragment_search_the_country" >
+        <action
+            android:id="@+id/action_searchTheCountryFragment_to_allTicketFragment"
+            app:destination="@id/allTicketFragment" />
+        <action
+            android:id="@+id/action_searchTheCountryFragment_to_filtersFragment"
+            app:destination="@id/filtersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allTicketFragment"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.AllTicketFragment"
+        android:label="fragment_all_ticket"
+        tools:layout="@layout/fragment_all_ticket" >
+        <action
+            android:id="@+id/action_allTicketFragment_to_filtersTicketFragment"
+            app:destination="@id/filtersTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.FiltersFragment"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" />
+    <fragment
+        android:id="@+id/filtersTicketFragment"
+        android:name="com.imprarce.android.testtasktickets.ui.ticketscreens.FiltersTicketFragment"
+        android:label="fragment_filters_ticket"
+        tools:layout="@layout/fragment_filters_ticket" />
 </navigation>

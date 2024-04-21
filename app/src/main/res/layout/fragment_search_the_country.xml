@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ticketscreens.SearchTheCountryFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_vertical_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/value_16_dp"
+        app:layout_editor_absoluteY="@dimen/value_16_dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line_vertical_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/value_16_dp"
+        app:layout_editor_absoluteY="@dimen/value_16_dp" />
+
+    <LinearLayout
+        android:id="@+id/linear_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_32_dp"
+        android:background="@drawable/custom_rectangle_linear_search"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/value_8_dp"
+            android:src="@drawable/arrow_back" />
+
+        <LinearLayout
+            android:id="@+id/linear_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableEnd="@drawable/icon_swap"
+                android:drawablePadding="@dimen/value_8_dp"
+                android:hint="@string/hint_search"
+                android:paddingBottom="@dimen/value_8_dp"
+                android:text="@string/plug_text_search"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_5" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableEnd="@drawable/icon_delete"
+                android:drawablePadding="@dimen/value_8_dp"
+                android:hint="@string/hint_search"
+                android:paddingTop="@dimen/value_8_dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_color_search_grey"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_16_dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
+        app:layout_constraintTop_toBottomOf="@+id/linear_search">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/value_16_dp"
+            android:paddingEnd="@dimen/value_16_dp"
+            app:layout_collapseMode="pin"
+            app:singleSelection="true">
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/grey_4"
+                app:iconStartPadding="@dimen/value_8_dp"
+                app:chipIconSize="@dimen/value_16_dp"
+                app:chipIcon="@drawable/icon_plus"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/grey_4"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_persons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/persons"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/grey_4"
+                app:iconStartPadding="@dimen/value_8_dp"
+                app:chipIconSize="@dimen/value_16_dp"
+                app:chipIcon="@drawable/icon_profile_small"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters"
+                app:chipIcon="@drawable/icon_filters"
+                android:textColor="@color/white"
+                app:chipBackgroundColor="@color/grey_4"
+                app:iconStartPadding="@dimen/value_8_dp"
+                app:chipIconSize="@dimen/value_16_dp"/>
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_16_dp"
+        android:background="@drawable/custom_rectangle_recycler_view"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+        <TextView
+            android:id="@+id/rails_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/value_16_dp"
+            android:text="@string/straight_rails"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/value_16_dp"
+            app:layout_constraintBottom_toTopOf="@+id/showMore_textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rails_textView" />
+
+        <TextView
+            android:id="@+id/showMore_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/value_16_dp"
+            android:gravity="center_horizontal"
+            android:text="@string/show_more"
+            android:textColor="@color/text_color_blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/see_all_tickets_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_32_dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/show_all_tickets"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:backgroundTint="@color/text_color_blue"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_32_dp"
+        android:padding="@dimen/value_4_dp"
+        android:background="@drawable/custom_rectangle_subcribe_price"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_vertical_right"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_vertical_left"
+        app:layout_constraintTop_toBottomOf="@+id/see_all_tickets_button">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/subcribe_price"
+            android:textSize="16sp"
+            android:drawablePadding="@dimen/value_8_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/switch1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableStartCompat="@drawable/icon_bell" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_3"
+    tools:context=".ui.ticketscreens.SearchFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/value_16_dp"
+        android:background="@drawable/custom_rectangle_linear_search"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableStart="@drawable/plane_up"
+                android:drawablePadding="@dimen/value_8_dp"
+                android:hint="@string/hint_search"
+                android:paddingBottom="@dimen/value_8_dp"
+                android:text="@string/plug_text_search"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_5" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableStart="@drawable/icon_search_2"
+                android:drawablePadding="@dimen/value_8_dp"
+                android:hint="@string/hint_search"
+                android:paddingTop="@dimen/value_8_dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_color_search_grey"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/value_16_dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/square_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_rectangle_icon_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_route"
+                app:layout_constraintBottom_toBottomOf="@+id/square_1"
+                app:layout_constraintEnd_toEndOf="@+id/square_1"
+                app:layout_constraintStart_toStartOf="@+id/square_1"
+                app:layout_constraintTop_toTopOf="@+id/square_1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/value_8_dp"
+                android:gravity="center"
+                android:text="@string/a_difficult_route"
+                app:layout_constraintTop_toBottomOf="@+id/square_1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/square_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_rectangle_icon_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_globus"
+                app:layout_constraintBottom_toBottomOf="@+id/square_2"
+                app:layout_constraintEnd_toEndOf="@+id/square_2"
+                app:layout_constraintStart_toStartOf="@+id/square_2"
+                app:layout_constraintTop_toTopOf="@+id/square_2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/value_8_dp"
+                android:gravity="center"
+                android:text="@string/everywhere"
+                app:layout_constraintTop_toBottomOf="@+id/square_2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/square_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_rectangle_icon_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_calendar"
+                app:layout_constraintBottom_toBottomOf="@+id/square_3"
+                app:layout_constraintEnd_toEndOf="@+id/square_3"
+                app:layout_constraintStart_toStartOf="@+id/square_3"
+                app:layout_constraintTop_toTopOf="@+id/square_3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/value_8_dp"
+                android:gravity="center"
+                android:text="@string/holidays"
+                app:layout_constraintTop_toBottomOf="@+id/square_3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/square_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/custom_rectangle_icon_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_fire"
+                app:layout_constraintBottom_toBottomOf="@+id/square_4"
+                app:layout_constraintEnd_toEndOf="@+id/square_4"
+                app:layout_constraintStart_toStartOf="@+id/square_4"
+                app:layout_constraintTop_toTopOf="@+id/square_4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/value_8_dp"
+                android:gravity="center"
+                android:text="@string/hot_tickets"
+                app:layout_constraintTop_toBottomOf="@+id/square_4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_rectangle_linear_search"
+        android:layout_margin="@dimen/value_32_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/value_16_dp"
+            tools:listitem="@layout/item_recycler_view_search" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
